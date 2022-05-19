@@ -3,7 +3,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-const date = require(__dirname + "/date.js");
+
 
 const app = express();
 
@@ -54,7 +54,6 @@ const workItems = [];
 
 app.get("/", function(req, res) {
 
-  const day = date.getDate();
   Task.find({}, function(err, tasksListFound) {
     if (err) {
       console.log(err);
